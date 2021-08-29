@@ -2,7 +2,7 @@
 const form = document.querySelector('form')
 const hours = document.getElementById('hours')
 const pay = document.getElementById('pay')
-const payLabel = document.querySelector("label[for=total]")
+const payLabel = document.querySelector('label[for=total]')
 
 //add event listener to form
 form.addEventListener('submit', e => {
@@ -27,3 +27,16 @@ btn.addEventListener('click', () => {
             btn.classList.remove('btnScale')
         }, 2000)
 })
+
+//change labels text if screen is smaller than 460px
+
+window.addEventListener('resize', () => {
+    if (window.screen.width < 460) {
+        const hoursWorked = document.querySelector('label[for=hours]')
+        const hourPay = document.querySelector('label[for=pay]')
+        hoursWorked.textContent = 'hours worked'
+        hourPay.textContent = 'hourly pay'
+    }
+})
+
+
